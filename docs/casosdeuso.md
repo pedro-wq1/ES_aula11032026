@@ -1,6 +1,6 @@
 ## UC01 — Realizar Login (UC EXEMPLO - FAZER DESSA FORMA PARA TODOS OS CASOS DE USO, NESSE MESMO DOCUMENTO)
 
-### Ator Principal
+### Ator Principala
 Usuário
 
 ### Objetivo
