@@ -35,32 +35,31 @@ Permitir que o usuário acesse o sistema.
 
 
 Alunos
-- fazer matricula
-- escolher tipo de plano
-- realizar pagamento
-- Cadastrar facial na catraca
+- Realizar matricula
+- Escolher plano
+- Efetuar pagamento
+- Realizar cadastro facial na catraca
 - Agendar aula
 - presença em aulas
-(talvez)
 - Passar pela avaliação física
 
 Recepcionistas
 - Gerenciar matrículas
 - Indicar planos
 - Gerenciar pagamentos
-- Gerenciar Agendamento de aulas
+- Gerenciar horário e agendamento das aulas
 
 Instrutores
-- Disponibilizar horário para aulas
-- Avaliações fisicas
-- Cadastrar catraca
+- Fornecer horários disponíveis para as aulas
+- Executar avaliações fisicas
+- Cadastrar facial na catraca para acesso
 
 Gerentes
 - Gerenciar planos
-- Relatórios Gerenciais
-- Pagamentos de funcionários
+- Análise de Relatórios Gerenciais
+- Gerir pagamentos de funcionários
+- Análisar presença de
 
 Sistema de catraca:
-- Acatar matriculas
-- Boquear alunos com pagamentos atrasados
-- Gerenciar controles de acesso/presença
+- Sincronizar matriculas
+- Boquear o acesso de alunos com pagamentos atrasados
