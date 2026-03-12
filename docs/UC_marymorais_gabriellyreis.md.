@@ -1,0 +1,405 @@
+parte gabrielly 
+RF01 - Realizar Cadastro de Aluno:
+
+O ator acessa a funcionalidade "Novo Aluno".
+O sistema exibe formulário com campos de dados pessoais, contato e endereço.
+O ator preenche os dados obrigatórios.
+O ator seleciona um plano contratado na lista de planos ativos.
+O sistema valida as informações.
+O ator confirma o cadastro.
+O sistema salva os dados e gera um ID único para o aluno (e código RFID, se aplicável).
+O caso de uso é encerrado.
+
+RF02 - Gerenciar Planos:
+
+O ator acessa o menu "Planos".
+O sistema lista todos os planos cadastrados.
+O ator seleciona a opção "Novo Plano" ou edita um existente.
+O ator preenche os dados (nome, tipo, duração, valor, descrição).
+O sistema valida as informações (ex: verifica duplicidade de nome).
+O ator confirma a operação.
+O sistema salva as alterações.
+O caso de uso é encerrado.
+
+RF03 - Registrar Pagamentos:
+
+A1 – Geração de Boleto: Se o pagamento for online, o sistema gera um boleto/cobrança para envio ao aluno (não a baixa em si).
+
+A2 – Pagamento adiantado: Se o aluno pagar antes do vencimento, o sistema considera como crédito para o próximo período.
+
+
+RF04 - Regularidade do Aluno:
+
+O sistema executa uma rotina diária (ou em tempo real na tentativa de acesso).
+O sistema compara a data atual com a data de validade do plano do aluno.
+Se a data atual for menor ou igual à data de validade + dias de tolerância.
+Se a data atual for maior que a data de validade + dias de tolerância, status.
+O sistema atualiza o campo "status_acesso" no cadastro do aluno.
+O caso de uso é encerrado.
+
+RF05 -  Controle de Acesso:
+
+A1 – Aluno Inadimplente: O sistema envia sinal de bloqueio para catraca (display mostra "Mensalidade atrasada").
+
+A2 – RFID não encontrado: O sistema registra tentativa de acesso com cartão inválido e não libera.
+
+
+RF06 - Agendamento de Aula:
+
+A1 – Aula lotada: O sistema informa que não há vagas e oferece opção de entrar em fila de espera.
+
+A2 – Cancelamento: O aluno pode cancelar o agendamento com até 1 hora de antecedência, liberando a vaga.
+
+
+RF07 - Lista de Presença:
+
+A1 – Aluno não agendado (turma aberta): O instrutor pode adicionar manualmente o aluno à lista de presença, mesmo sem agendamento prévio, se a aula permitir.
+
+
+RF08 - Avaliação Física:
+
+O ator localiza o aluno no sistema.
+O ator acessa o menu "Avaliações Físicas" e clica em "Nova Avaliação".
+O sistema exibe um formulário com campos: peso, altura, IMC (calculado), percentual de gordura, etc.
+O ator preenche os dados obtidos.
+O ator anexa arquivos (ex: scan da dobras cutâneas, foto biometria), se necessário.
+O ator salva a avaliação.
+O sistema vincula a avaliação à data atual e ao histórico do aluno.
+O caso de uso é encerrado.
+RF09 - Relatórios Gerenciais:
+    A1 - Performance: Relatórios com período superior a 1 ano devem ser gerados em no máximo 10 segundos.
+
+RF10 - Enviar Notificações:
+
+Disparar gatilho (agendamento, vencimento, avaliação)
+Identificar aluno e contatos preferenciais
+Compor mensagem por template
+Enviar via canal adequado (e-mail/push/SMS)
+Registrar log de envio
+
+parte mary
+## UC11 — Bloqueio por inadimplência 
+
+### Ator Principal
+Aluno
+
+### Objetivo
+Bloqueiar o acesso do aluno
+
+### Pré-condições
+- Aluno deve estar com a mensalidade vencida há mais de 5 dias.
+### Pós-condições
+- O aluno é inpedido de entrar na academia
+
+### Fluxo Principal
+1. O aluno chega na academia.
+2. O sistema valida as credenciais.
+3. O sistema verifica se o aluno está com a mensalidade em dia.
+
+### Fluxos Alternativos
+- **A1 — Em atraso :**  
+  O sistema exibe uma mensagem de que não é possivel entrar na academia.
+
+- **A2 — Em dia :**  
+  O sistema exibe uma mensagem de boas vindas.
+  
+### RF Relacionados
+- RF04 — Regularidade do Aluno
+
+### RN Relacionadas
+- RN01 — Bloqueio por inadimplência
+
+## UC12 — Limite de vagas
+### Ator Principal
+Aluno
+
+### Objetivo
+Permitir que o aluno possa se cadastrar em uma aula.
+
+### Pré-condições
+- deve haver aulas cadastrada no sistema.
+
+### Pós-condições
+- Reserva de vaga confirmada.
+- O numero de vagas na aula é modificado
+
+### Fluxo Principal
+
+1- O aluno seleciona a aula e o horário desejado.
+2- O sistema verifica a disponibilidade de vagas.
+3- O sistema registra o agendamento para o aluno.
+4- O sistema confirma o sucesso do agendamento e exibe o detalhes.
+
+### Fluxos Alternativos
+- **A1 — Turma lotada:**  
+  O sistema exibe mensagem de que a turma não tem mais vagas disponivel.
+
+- **A2 — Choque de horario:**  
+  O sistema identifica que o aluno já tem outra aula nesse mesmo horario.
+
+### RN Relacionadas
+RN02 — Limite de vagas
+
+## UC13 — Cancelamento de agendamento
+
+### Ator Principal
+Aluno
+
+### Objetivo
+Permitir que o aluno cancele uma reserva.
+
+### Pré-condições
+- O aluno deve cancelar pelo menos 1 hora antes do inicio da aula.
+
+### Pós-condições
+- Aula cancelada.
+
+### Fluxo Principal
+1. O usuário cancela a aula.
+2. O sistema muda o numero de vagas da aula.
+
+### Fluxos Alternativos
+- **A1 — Depois de uma hora:**  
+  O sistema exibe mensagem de erro falando que o aluno não pode mais cancelar a aula.
+
+### RN Relacionadas
+RN03 — Cancelamento de agendamento
+
+## UC14 — Pagamento parcial
+
+### Ator Principal
+aluno
+
+### Objetivo
+Não permitir o parcelamento da mensalidade.
+
+### Pré-condições
+- Existência de uma fatura ou mensalidade em aberto.
+
+### Pós-condições
+- Mensalidade marcada como "Paga".
+- Comprovante de transação gerado.
+
+### Fluxo Principal
+1. O usuário visualiza a mensalidade em aberto.
+2. O usuário seleciona o método de pagamento.
+3. O sistema apresenta o valor total da mensalidade.
+4. O usuário confirma o pagamento do valor integral.
+5. O sistema processa a transação com a operadora financeira.
+6. O sistema confirma o recebimento e atualiza o status para "Pago".
+
+### Fluxos Alternativos
+- **A1 — Tentativa de Pagamento Parcial :**  
+  O sistema bloqueia a operação e exibe mensagem: "Não é permitido o pagamento parcial. O valor deve ser quitado integralmente."
+
+- **A2 — Pagamento Rejeitado pela Operadora::**  
+  O sistema notifica o usuário e mantém a mensalidade como "Pendente".
+  
+### RF Relacionados
+- RF03 — Controle de Pagamentos
+
+### RNF Relacionados
+- RNF02 — Segurança
+
+### RN Relacionadas
+- RN04 — Pagamento parcial
+
+## UC15 — Avaliação física
+
+### Ator Principal
+Aluno/instrutor
+
+### Objetivo
+Permitir que o usuário faça uma avaliação fisica.
+
+### Pré-condições
+- O aluno deve possuir cadastro ativo.
+- O aluno deve estar frequentando a academia a pelo menos 4 dias na semana
+
+### Pós-condições
+- O aluno tem sua condição avaliada por um instrutor.
+
+### Fluxo Principal
+1. O sistema verifica o status do aluno (Ativo e Regular).
+2. O sistema libera o formulário de coleta de dados.
+3. O instrutor insere as informações técnicas da avaliação.
+4. O sistema disponibiliza o resultado para consulta do aluno e do instrutor.
+
+### Fluxos Alternativos
+- **A1 — Aluno inativo ou irregular:**  
+  O sistema bloqueia a abertura do formulário.
+
+### RF Relacionados
+- RF07 — Lista de Presença
+- RF08 — Avaliação Física
+
+### RN Relacionadas
+- RN05 — Avaliação física
+
+## UC16 — Acesso restrito por perfil
+
+### Ator Principal
+Recepcionista, Instrutor ou Gerente
+
+### Objetivo
+Garantir que cada colaborador acesse apenas as funcionalidades permitidas para o seu cargo.
+
+### Pré-condições
+- Usuário deve estar autenticado
+- O perfil do usuário deve estar previamente configurado no banco de dados.
+
+### Pós-condições
+- Acesso concedido apenas às áreas autorizadas.
+
+### Fluxo Principal
+1. O usuário realiza o login no sistema.
+2. O sistema identifica o perfil vinculado ao usuário .
+3. O sistema renderiza exibindo apenas os módulos permitidos.
+4. O usuário seleciona a funcionalidade desejada.
+5. O sistema valida a permissão .
+
+### Fluxos Alternativos
+- **A1 —Alteração de perfil em tempo real:**  
+  O Gerente altera o perfil de um colaborador de "Instrutor" para "Gerente".
+
+### RF Relacionados
+- RF09 — Relatórios Gerenciais
+
+### RNF Relacionados
+- RNF02 — Segurança
+
+### RN Relacionadas
+- RN06 — Acesso restrito por perfil
+
+## UC17 — Atualização automática da regularidade
+
+### Ator Principal
+Aluno
+
+### Objetivo
+Atualizar o pagamento imediatamente.
+
+### Pré-condições
+- O aluno deve fazer o pagamento.
+
+### Pós-condições
+- O sistema deve reconhecer o pagamento.
+- O sistema deve atualizar imediatamente a situação do aluno.
+
+### Fluxo Principal
+1. O Aluno faz o pagamento.
+2. O sistema valida o pagamento.
+3. O sistema atualiza a situação do aluno.
+
+### Fluxos Alternativos
+- **A1 — Estorno ou Cancelamento de Pagamento:**  
+  O sistema reverte a situação do aluno para "Irregular" ou "Inadimplente".
+
+### RF Relacionados
+- RF03 — Controle de Pagamentos
+- RF04 — Regularidade do Aluno
+
+### RNF Relacionados
+- RNF02 — Segurança
+
+### RN Relacionadas
+- RN07 — Atualização automática da regularidade
+
+## UC18 — Disponibilidade
+
+### Ator Principal
+Sistema/Gerente
+
+### Objetivo
+Garantir que o sistema permaneça operacional
+
+### Pré-condições
+- O sistema deve estar em ambiente de produção.
+- Ferramentas de monitoramento de servidor devem estar ativas.
+
+### Pós-condições
+- Alertas enviados em caso de queda.
+
+### Fluxo Principal
+1. O sistema monitora continuamente o status dos serviços (Banco de Dados, Servidor Web).
+2. O sistema registra o tempo de atividade (uptime) em logs de performance.
+3. O sistema disponibiliza para o Gerente um painel de status em tempo real.
+4. Em caso de operação normal, o sistema mantém a meta de 99% .
+
+### Fluxos Alternativos
+- ** Manutenção Programada:**  
+ O Gerente agenda uma janela de manutenção
+ O sistema exibe um aviso prévio aos usuários sobre a indisponibilidade temporária.
+
+### RNF Relacionados
+- RNF01 — Disponibilidade
+
+## UC19 — Segurança
+
+### Ator Principal
+Sistema 
+
+### Objetivo
+Garantir a confidencialidade das informações dos usuários e registros financeiros.
+
+### Pré-condições
+- Recebimento de dados via formulários (Cadastro, Pagamento, Avaliação).
+- Conexão ativa com o banco de dados.
+
+### Pós-condições
+- Dados armazenados no banco de dados em formato ilegível
+- Chaves de criptografia gerenciadas de forma segura.
+
+### Fluxo Principal
+1. O sistema recebe dados de entrada do usuário
+2. O sistema identifica quais campos são classificados como "sensíveis"
+3. O sistema aplica o algoritmo de criptografia
+4. O sistema grava a informação criptografada no banco de dados.
+5. O sistema confirma a persistência segura do dado.
+
+### Fluxos Alternativos
+- **A1 — Recuperação de Dados para Exibição:**  
+  O usuário solicita a visualização de um dado sensível.
+  O sistema descriptografa a informação utilizando a chave mestra.
+  O sistema exibe o dado em texto claro na interface.
+
+### RF Relacionados
+- RF09 — Relatórios Gerenciais
+  
+### RNF Relacionados
+- RNF02 — Segurança
+
+### RN Relacionadas
+- RN06 — Acesso restrito por perfil
+
+## UC20 —  Performance
+
+### Ator Principal
+Sistema
+
+### Objetivo
+Garantir que as interações do usuário, especialmente as validações de acesso e regras de negócio, ocorram dentro do limite aceitável de tempo.
+
+### Pré-condições
+- sistema deve estar operacional
+
+### Pós-condições
+- Resposta entregue ao usuário em tempo hábil.
+
+### Fluxo Principal
+1. O usuário aciona uma funcionalidade
+2. O sistema inicia o processamento das regras associadas
+3. O sistema processa a requisição e retorna o resultado
+4. O tempo total entre o clique e a resposta é de até 3 segundos
+
+### Fluxos Alternativos
+- **A1 — Timeout:**  
+O processamento ultrapassa o limite técnico de segurança
+O sistema interrompe a requisição para não travar
+O sistema exibe mensagem: "O sistema demorou a responder. Por favor, tente novamente em instantes."
+
+### RNF Relacionados
+- RNF03 — Performance
+
+### RN Relacionadas
+- RN07 — Atualização automática da regularidade
