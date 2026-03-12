@@ -47,7 +47,8 @@ Permitir que o usuário acesse o sistema com suas credenciais.
 
 ### Diagrama Relacionado
 > **DUC-01 — Autenticação e Gerenciamento de Usuários**
-> ![DUC-01](DUC_01_IsadoraCabraldosSantos_JoaoAugustodeFreitas.png)
+> 
+> <img width="450" height="413" alt="DUC_01_IsadoraCabraldosSantos_JoaoAugustodeFreitas" src="https://github.com/user-attachments/assets/d41c2a21-b581-4113-a7d9-309a03a77032" />
 
 ---
 
@@ -100,7 +101,8 @@ Registrar um novo aluno no sistema com todos os dados necessários para matrícu
 
 ### Diagrama Relacionado
 > **DUC-02 — Cadastro de Alunos**
-> ![DUC-02](DUC_02_IsadoraCabraldosSantos_JoaoAugustodeFreitas.png)
+> 
+> <img width="507" height="253" alt="DUC_02_IsadoraCabraldosSantos_JoaoAugustodeFreitas" src="https://github.com/user-attachments/assets/1b9c1f2f-497f-4677-b434-130655be54e5" />
 
 ---
 
@@ -145,7 +147,8 @@ Atualizar informações cadastrais de um aluno existente.
 
 ### Diagrama Relacionado
 > **DUC-02 — Cadastro de Alunos**
-> ![DUC-02](DUC_02_IsadoraCabraldosSantos_JoaoAugustodeFreitas.png)
+> 
+> <img width="507" height="253" alt="DUC_02_IsadoraCabraldosSantos_JoaoAugustodeFreitas" src="https://github.com/user-attachments/assets/aea37321-032a-4f23-a875-4217c83beffd" />
 
 ---
 
@@ -189,7 +192,8 @@ Criar, editar, ativar e desativar planos disponíveis na academia.
 
 ### Diagrama Relacionado
 > **DUC-03 — Módulo Financeiro**
-> ![DUC-03](DUC_03_IsadoraCabraldosSantos_JoaoAugustodeFreitas.png)
+> 
+> <img width="1165" height="420" alt="DUC_03_IsadoraCabraldosSantos_JoaoAugustodeFreitas" src="https://github.com/user-attachments/assets/9a5af611-de5f-462d-830f-5e43108f83a2" />
 
 ---
 
@@ -240,7 +244,8 @@ Registrar o pagamento da mensalidade de um aluno.
 
 ### Diagrama Relacionado
 > **DUC-03 — Módulo Financeiro**
-> ![DUC-03](DUC_03_IsadoraCabraldosSantos_JoaoAugustodeFreitas.png)
+> 
+> <img width="1165" height="420" alt="DUC_03_IsadoraCabraldosSantos_JoaoAugustodeFreitas" src="https://github.com/user-attachments/assets/984a99aa-09b7-435a-81d3-485686804cf2" />
 
 ---
 
@@ -283,8 +288,10 @@ Verificar automaticamente se o aluno possui mensalidade em dia para permitir ace
 
 ### Diagrama Relacionado
 > **DUC-03 — Módulo Financeiro** e **DUC-04 — Controle de Acesso por Catraca**
-> ![DUC-03](DUC_03_IsadoraCabraldosSantos_JoaoAugustodeFreitas.png)
-> ![DUC-04](DUC_04_IsadoraCabraldosSantos_JoaoAugustodeFreitas.png)
+> 
+> <img width="1165" height="420" alt="DUC_03_IsadoraCabraldosSantos_JoaoAugustodeFreitas" src="https://github.com/user-attachments/assets/18e981cf-71de-4c48-9a18-da8898ea824d" />
+> <img width="399" height="443" alt="DUC_04_IsadoraCabraldosSantos_JoaoAugustodeFreitas" src="https://github.com/user-attachments/assets/87588dd7-444a-46c7-a1de-6783fbae90ad" />
+
 
 ---
 
@@ -334,7 +341,8 @@ Validar e liberar ou bloquear o acesso físico do aluno à academia via cartão 
 
 ### Diagrama Relacionado
 > **DUC-04 — Controle de Acesso por Catraca**
-> ![DUC-04](DUC_04_IsadoraCabraldosSantos_JoaoAugustodeFreitas.png)
+> 
+> <img width="399" height="443" alt="DUC_04_IsadoraCabraldosSantos_JoaoAugustodeFreitas" src="https://github.com/user-attachments/assets/4c457c12-6bf4-4297-8fd2-be6648d8aff9" />
 
 ---
 
@@ -374,7 +382,8 @@ Permitir que o aluno visualize os horários e as vagas disponíveis das aulas of
 
 ### Diagrama Relacionado
 > **DUC-05 — Agendamento e Presença em Aulas**
-> ![DUC-05](DUC_05_IsadoraCabraldosSantos_JoaoAugustodeFreitas.png)
+> 
+> <img width="822" height="413" alt="DUC_05_IsadoraCabraldosSantos_JoaoAugustodeFreitas" src="https://github.com/user-attachments/assets/aa1c1997-e4be-469f-a14f-5f231167f887" />
 
 ---
 
@@ -428,7 +437,8 @@ Reservar uma vaga em uma aula disponível.
 
 ### Diagrama Relacionado
 > **DUC-05 — Agendamento e Presença em Aulas**
-> ![DUC-05](DUC_05_IsadoraCabraldosSantos_JoaoAugustodeFreitas.png)
+> 
+> <img width="822" height="413" alt="DUC_05_IsadoraCabraldosSantos_JoaoAugustodeFreitas" src="https://github.com/user-attachments/assets/1ebe5444-fa3e-4551-8f35-50e9ede8cbf8" />
 
 ---
 
@@ -473,7 +483,8 @@ Cancelar uma reserva de aula previamente agendada.
 
 ### Diagrama Relacionado
 > **DUC-05 — Agendamento e Presença em Aulas**
-> ![DUC-05](DUC_05_IsadoraCabraldosSantos_JoaoAugustodeFreitas.png)
+> 
+> <img width="822" height="413" alt="DUC_05_IsadoraCabraldosSantos_JoaoAugustodeFreitas" src="https://github.com/user-attachments/assets/c1b5bdc9-7756-454c-9e56-35a45751eff6" />
 
 ---
 
@@ -519,7 +530,8 @@ Registrar a presença dos alunos em uma aula ministrada.
 
 ### Diagrama Relacionado
 > **DUC-05 — Agendamento e Presença em Aulas**
-> ![DUC-05](DUC_05_IsadoraCabraldosSantos_JoaoAugustodeFreitas.png)
+> 
+> <img width="822" height="413" alt="DUC_05_IsadoraCabraldosSantos_JoaoAugustodeFreitas" src="https://github.com/user-attachments/assets/21d100d9-722e-4685-904e-195db240870c" />
 
 ---
 
@@ -568,7 +580,8 @@ Registrar os dados de avaliação física de um aluno, incluindo medidas corpora
 
 ### Diagrama Relacionado
 > **DUC-06 — Avaliação Física**
-> ![DUC-06](DUC_06_IsadoraCabraldosSantos_JoaoAugustodeFreitas.png)
+> 
+> <img width="378" height="421" alt="DUC_06_IsadoraCabraldosSantos_JoaoAugustodeFreitas" src="https://github.com/user-attachments/assets/cf6803c7-729f-4327-b96f-f20cf09a391a" />
 
 ---
 
@@ -609,7 +622,8 @@ Consultar o histórico de avaliações físicas de um aluno ao longo do tempo.
 
 ### Diagrama Relacionado
 > **DUC-06 — Avaliação Física**
-> ![DUC-06](DUC_06_IsadoraCabraldosSantos_JoaoAugustodeFreitas.png)
+> 
+> <img width="378" height="421" alt="DUC_06_IsadoraCabraldosSantos_JoaoAugustodeFreitas" src="https://github.com/user-attachments/assets/b0a4706b-63bc-433f-8fdb-baff6e545756" />
 
 ---
 
@@ -651,7 +665,8 @@ Gerar relatório com a lista de alunos inadimplentes, valores em aberto e tempo 
 
 ### Diagrama Relacionado
 > **DUC-07 — Relatórios Gerenciais**
-> ![DUC-07](DUC_07_IsadoraCabraldosSantos_JoaoAugustodeFreitas.png)
+> 
+> <img width="1164" height="257" alt="DUC_07_IsadoraCabraldosSantos_JoaoAugustodeFreitas" src="https://github.com/user-attachments/assets/656f8f20-a834-44cf-9295-49b5f288da0b" />
 
 ---
 
@@ -691,7 +706,8 @@ Gerar relatório com todos os alunos com matrícula ativa na academia.
 
 ### Diagrama Relacionado
 > **DUC-07 — Relatórios Gerenciais**
-> ![DUC-07](DUC_07_IsadoraCabraldosSantos_JoaoAugustodeFreitas.png)
+> 
+> <img width="1164" height="257" alt="DUC_07_IsadoraCabraldosSantos_JoaoAugustodeFreitas" src="https://github.com/user-attachments/assets/c2bfd052-f33d-46d4-9aeb-f4e84525234c" />
 
 ---
 
@@ -733,7 +749,8 @@ Gerar relatório com o histórico de entradas dos alunos na academia.
 
 ### Diagrama Relacionado
 > **DUC-07 — Relatórios Gerenciais**
-> ![DUC-07](DUC_07_IsadoraCabraldosSantos_JoaoAugustodeFreitas.png)
+> 
+> <img width="1164" height="257" alt="DUC_07_IsadoraCabraldosSantos_JoaoAugustodeFreitas" src="https://github.com/user-attachments/assets/2ae3e609-c343-4868-a3a1-21a88d3e93c3" />
 
 ---
 
@@ -776,7 +793,8 @@ Gerar relatório com a taxa de ocupação das aulas oferecidas pela academia.
 
 ### Diagrama Relacionado
 > **DUC-07 — Relatórios Gerenciais**
-> ![DUC-07](DUC_07_IsadoraCabraldosSantos_JoaoAugustodeFreitas.png)
+> 
+> <img width="1164" height="257" alt="DUC_07_IsadoraCabraldosSantos_JoaoAugustodeFreitas" src="https://github.com/user-attachments/assets/0a1a2b5e-9d9e-42be-924c-de9ce9d8b86c" />
 
 ---
 
@@ -820,7 +838,8 @@ Enviar notificações automáticas aos alunos informando sobre o vencimento pró
 
 ### Diagrama Relacionado
 > **DUC-03 — Módulo Financeiro**
-> ![DUC-03](DUC_03_IsadoraCabraldosSantos_JoaoAugustodeFreitas.png)
+> 
+> <img width="1165" height="420" alt="DUC_03_IsadoraCabraldosSantos_JoaoAugustodeFreitas" src="https://github.com/user-attachments/assets/97f607ae-dde4-4dad-85c7-3a4d6695dbd0" />
 
 ---
 
@@ -868,7 +887,8 @@ Gerar boleto bancário ou token de pagamento online para que o aluno quite sua m
 
 ### Diagrama Relacionado
 > **DUC-03 — Módulo Financeiro**
-> ![DUC-03](DUC_03_IsadoraCabraldosSantos_JoaoAugustodeFreitas.png)
+> 
+> <img width="1165" height="420" alt="DUC_03_IsadoraCabraldosSantos_JoaoAugustodeFreitas" src="https://github.com/user-attachments/assets/9722b834-a74f-409d-81d3-2d8e28258901" />
 
 ---
 
@@ -916,4 +936,6 @@ Criar, editar, ativar e desativar contas de usuários do sistema, definindo perf
 
 ### Diagrama Relacionado
 > **DUC-01 — Autenticação e Gerenciamento de Usuários**
-> ![DUC-01](DUC_01_IsadoraCabraldosSantos_JoaoAugustodeFreitas.png)
+> 
+> <img width="450" height="413" alt="DUC_01_IsadoraCabraldosSantos_JoaoAugustodeFreitas" src="https://github.com/user-attachments/assets/aa155e45-01b3-4f90-b7ec-5dee21995bfc" />
+
